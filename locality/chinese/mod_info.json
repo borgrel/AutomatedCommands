@@ -2,7 +2,7 @@
     "id": "automatedcommands",
     "name": "自动指令",
     "author": "作者：borgrel      汉化：wnsmds",
-    "version": "1.1a",
+    "version": "1.4",
     "utility": "false",
     "description": "允许玩家以船插的形式分配自动船舰命令",
     "gameVersion": "0.96a-RC9",
