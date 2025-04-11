@@ -8,6 +8,7 @@ import data.combatlog.Util;
 import data.hullmods.AutomatedHullMod;
 
 import java.text.MessageFormat;
+import java.util.Arrays;
 import java.util.Map;
 
 import static com.fs.starfarer.api.Global.getCombatEngine;
@@ -76,8 +77,8 @@ public class BaseRegroup extends AutomatedHullMod {
         }
         data.put(shipTag, timeElapsed);
     }
-
-    private float calculateReplacementRate(ShipAPI ship) {
+    //Left in place till new replacement code is tested, todo remove later
+    private float calculateReplacementRateOld(ShipAPI ship) {
         float rate = 0.0f;
         int count = 0;
 
@@ -91,6 +92,13 @@ public class BaseRegroup extends AutomatedHullMod {
             return 2.0f; //there are no fighter wings installed in the carrier
         }
         return rate / count;
+    }
+
+    private double calculateReplacementRate(ShipAPI ship) {
+        return ship.getLaunchBaysCopy().stream()
+                .mapToDouble(FighterLaunchBayAPI::getCurrRate)
+                .average()
+                .orElse(2.0f); //there are no fighter wings installed in the carrier
     }
 
     @Override
