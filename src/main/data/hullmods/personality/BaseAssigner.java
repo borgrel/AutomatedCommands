@@ -21,12 +21,14 @@ public class BaseAssigner extends AutomatedHullMod {
     private static final String CATEGORY = "personality";
     protected static final String TOKEN = "";
 
-    enum Personality {
+    //todo move enum to own file
+    public enum Personality {
         TIMID,
         CAUTIOUS,
         STEADY,
         AGGRESSIVE,
         RECKLESS;
+
         final String id;
         final String value;
 

@@ -2,9 +2,9 @@
     "id": "automatedcommands",
     "name": "Automated Commands",
     "author": "Coder: borgrel  Translator: wnsmds",
-    "version": "1.1a",
+    "version": "1.5",
     "utility": "false",
     "description": "Allows the player to assign automated ship commands as hullmods",
-    "gameVersion": "0.96a-RC9",
+    "gameVersion": "0.98a-RC7",
     "jars":["jars/AutomatedCommands.jar"]
 }

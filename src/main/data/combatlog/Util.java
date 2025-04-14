@@ -37,6 +37,7 @@ public enum Util {
         String input = getString(message);
         Matcher matcher = TEMPLATE_VARIABLE.matcher(input);
 
+        // TODO make matcher find group and id
         while (matcher.find()) {
             String replacement = getString(matcher.group(REPLACE_VALUE));
             input = matcher.replaceFirst(replacement);
