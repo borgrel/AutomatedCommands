@@ -8,7 +8,6 @@ import data.combatlog.Util;
 import data.hullmods.AutomatedHullMod;
 
 import java.text.MessageFormat;
-import java.util.Arrays;
 import java.util.Map;
 
 import static com.fs.starfarer.api.Global.getCombatEngine;
