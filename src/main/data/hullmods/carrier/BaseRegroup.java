@@ -67,7 +67,7 @@ public class BaseRegroup extends AutomatedHullMod {
             return;
 
         //new IntervalUtil()
-        float rate = calculateReplacementRate(ship);
+        float rate = (float)calculateReplacementRate(ship);
         if (rate > 1.0f) return; //there are no fighter wings installed in the carrier
 
         if (rate > THRESHOLD) {
@@ -103,17 +103,12 @@ public class BaseRegroup extends AutomatedHullMod {
 
     @Override
     public String getDescriptionParam(int index, ShipAPI.HullSize hullSize) {
-        switch (index) {
-            case 0:
-                return REGROUP;
-            case 1:
-                return limitText;
-            case 2:
-                return ENGAGE;
-            case 3:
-                return THRESHOLD_TEXT;
-            default:
-                return null;
-        }
+        return switch (index) {
+            case 0 -> REGROUP;
+            case 1 -> limitText;
+            case 2 -> ENGAGE;
+            case 3 -> THRESHOLD_TEXT;
+            default -> null;
+        };
     }
 }
